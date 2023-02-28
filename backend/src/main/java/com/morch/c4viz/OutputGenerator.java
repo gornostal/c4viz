@@ -89,6 +89,7 @@ public class OutputGenerator {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
             long plantUmlStart = System.currentTimeMillis();
+            logger.info("> Definition {}", diagram.getDefinition());
             SourceStringReader reader = new SourceStringReader(diagram.getDefinition());
             // DiagramDescription desc =
             reader.outputImage(byteArrayOutputStream, new FileFormatOption(FileFormat.SVG));

@@ -1,12 +1,14 @@
 version: "3.9"
 services:
   c4viz:
-    image: pmorch/c4viz:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "9000:9000"
     volumes:
       - "c4vizcache:/var/cache/c4viz"
-      - "./sourceDir:/sourceDir"
+      # - "./sourceDir:/sourceDir"
     environment:
       SERVER_PORT: "9000"
       C4VIZ_SOURCE: big-bank-plc.dsl
